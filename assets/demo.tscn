@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://cm4pshn75jy6w"]
+
+[ext_resource type="Script" uid="uid://dbv0o7txd4dh8" path="res://assets/demo.gd" id="1_amuei"]
+[ext_resource type="PackedScene" uid="uid://bxn3o2j6lsmk0" path="res://assets/Character3D.tscn" id="1_s02n5"]
+[ext_resource type="PackedScene" uid="uid://xmjt04hn51kw" path="res://Tree Assets.glb" id="3_e6to4"]
+[ext_resource type="AudioStream" uid="uid://btv24uicjugxm" path="res://assets/FOREST AMBIENCE  SOUND EFFECTS  HIGH QUALITY  NO COPYRIGHT.mp3" id="4_457xp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e6to4"]
+size = Vector3(22.9236, 1, 6.01367)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_amuei")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.999553, -0.00576809, 0.0293427, 0.000226776, 0.982655, 0.185442, -0.0299034, -0.185353, 0.982217, 0, 6.64671, 11.4448)
+
+[node name="WalkMyCharacter3D" parent="." instance=ExtResource("1_s02n5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.192351, 2.56501, 1.40692)
+
+[node name="WalkMyCharacter3D3" parent="." instance=ExtResource("1_s02n5")]
+transform = Transform3D(0.734086, 0, 0.679057, 0, 1, 0, -0.679057, 0, 0.734086, -6.68391, 4.1293, 3.81152)
+
+[node name="WalkMyCharacter3D2" parent="." instance=ExtResource("1_s02n5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.10589, 4.1293, 3.66198)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.408107, 0.912934, 0, -0.912934, 0.408107, 0, 9.79642, 8.39257)
+
+[node name="Tree Assets" parent="." instance=ExtResource("3_e6to4")]
+transform = Transform3D(-50.4438, 0, -31.2326, 0, 59.33, 0, 31.2326, 0, -50.4438, 6.08154, 14.6389, -13.0544)
+
+[node name="Tree Assets2" parent="." instance=ExtResource("3_e6to4")]
+transform = Transform3D(-50.4438, 0, -31.2326, 0, 59.33, 0, 31.2326, 0, -50.4438, 41.276, 16.1613, -36.9795)
+
+[node name="Tree Assets3" parent="." instance=ExtResource("3_e6to4")]
+transform = Transform3D(-50.4438, 0, -31.2326, 0, 59.33, 0, 31.2326, 0, -50.4438, -18.8814, 16.1613, -36.9795)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2.50399, 0, 0, 0, 2.68635, -0.393188, 1.60754, 1.7257)
+shape = SubResource("BoxShape3D_e6to4")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_457xp")
+volume_db = -1.5
+autoplay = true
